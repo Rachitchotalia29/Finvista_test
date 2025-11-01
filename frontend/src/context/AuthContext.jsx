@@ -5,7 +5,7 @@ const AuthContext = createContext();
 
 const getStoredAuth = () => {
   try {
-    const raw = localStorage.getItem('arthapath_auth');
+    const raw = localStorage.getItem('aqverium_auth');
     if (!raw) return null;
     return JSON.parse(raw);
   } catch (error) {
@@ -20,9 +20,9 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     if (authState) {
-      localStorage.setItem('arthapath_auth', JSON.stringify(authState));
+      localStorage.setItem('aqverium_auth', JSON.stringify(authState));
     } else {
-      localStorage.removeItem('arthapath_auth');
+      localStorage.removeItem('aqverium_auth');
     }
   }, [authState]);
 
